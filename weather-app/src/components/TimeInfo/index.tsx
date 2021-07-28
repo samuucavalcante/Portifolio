@@ -27,10 +27,12 @@ export default function TimeInfo({ ...rest }: Props) {
       </div>
 
       <div className="timeinfo-highlight">
-        <h2>Today&apos;s Highlights</h2>
+        <h2 className="timeinfo-highlight-title">Today&apos;s Highlights</h2>
         <div className="timeinfo-highlight-list-card">
-          <CardHighlight />
-          <CardHighlight />
+          <CardHighlight title="Wind Status" type="mph" value={7} />
+          <CardHighlight title="Humidity" type="%" value={84} progressBar />
+          <CardHighlight title="Visibility" type="miles" value="6.4" />
+          <CardHighlight title="Air Pressure" type="mb" value="998" />
         </div>
       </div>
     </Container>

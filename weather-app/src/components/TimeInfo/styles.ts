@@ -45,14 +45,20 @@ export const Container = styled.div`
   .timeinfo-weather-forecast-weekly {
     display: flex;
     justify-content: space-between;
-    margin: 50px 0;
+    margin: 30px 0;
   }
 
   .timeinfo-highlight {
-    
+    &-title {
+      font-size: 24px;
+    }
+
     &-list-card {
       display: flex;
       justify-content: space-between;
+      flex-wrap: wrap;
+      margin: 30px 0;
+      gap: 30px;
     }
   }
 `;

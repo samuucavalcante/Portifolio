@@ -1,6 +1,13 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+  .time {
+    background-image: url('./Cloud-background.png');
+    background-repeat: no-repeat;
+    background-position: center 65px;
+    background-size: 700px 300px;
+    background-blend-mode: overlay;
+  }
   .time-header {
     display: flex;
     justify-content: space-between;
@@ -46,25 +53,24 @@ export const Container = styled.div`
   .time-body {
     &-temperature {
       margin: 48px 0;
-      font-family: 'Raleway';
+      font-family: "Raleway";
       font-style: normal;
       font-weight: 500;
       font-size: 120px;
 
       &::after {
-        content: 'ºC';
+        content: "ºC";
         display: inline-block;
         font-size: 38px;
-        color: #A09FB1;
+        color: #a09fb1;
         font-weight: 600;
       }
     }
 
     &-weather-forecast {
       font-size: 36px;
-      color: #A09FB1;
+      color: #a09fb1;
       font-weight: 600;
-
     }
   }
 
@@ -79,24 +85,25 @@ export const Container = styled.div`
       align-items: center;
 
       font-size: 18px;
-      color: #A09FB1;
+      color: #a09fb1;
       font-weight: 600;
     }
 
-    &-day, &-calendar {
-      color: #88869D;
+    &-day,
+    &-calendar {
+      color: #88869d;
       font-size: 18px;
       font-weight: 500;
     }
 
     &-day {
       &::after {
-        content: '';
+        content: "";
         display: inline-block;
         width: 5px;
         height: 5px;
         border-radius: 50%;
-        background-color: #88869D;
+        background-color: #88869d;
         margin: 0 10px;
         margin-bottom: 3px;
       }

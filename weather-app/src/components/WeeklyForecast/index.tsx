@@ -1,16 +1,18 @@
 import React from "react";
 import Image from "next/image";
-import Sleet from "../../../public/Sleet.png";
+import image from '../../utils/images';
 
 import { Container } from "./styles";
 
 export default function WeeklyForecast() {
+  const { sleet } = image;
+
   return (
     <Container>
       <h3 className="weeklyforecast-title">Tomorrow</h3>
       <Image
         className="weeklyforecast-image"
-        src={Sleet}
+        src={sleet}
         alt="Sleet"
         width="56"
         height="60"
