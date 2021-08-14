@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+type ContainerP = {
+  scale: string[] | string | undefined; 
+}
+
+export const Container = styled.div<ContainerP>`
   padding: 42px 126px;
 
   .timeinfo-header {
@@ -14,15 +18,17 @@ export const Container = styled.div`
       align-items: center;
       width: 40px;
       height: 40px;
-      background-color: #e7e7eb;
+      background-color:${props => props.scale === 'c' ?'#e7e7eb' :'#585676' };
       border-radius: 50%;
+
 
       cursor: pointer;
     }
 
     &-celsius-text {
-      color: #110e3c;
+      color: ${props => props.scale === 'c' ?'#110E3C' :'#E7E7EB' };
       font-weight: 700;
+
     }
 
     &-fahrenheit {
@@ -31,14 +37,15 @@ export const Container = styled.div`
       align-items: center;
       width: 40px;
       height: 40px;
-      background-color: #585676;
+      background-color: ${props => props.scale === 'f' ?'#e7e7eb' :'#585676' };
       border-radius: 50%;
-      color: white;
       cursor: pointer;
     }
 
     &-fahrenheit-text {
       font-weight: 700;
+      color: ${props => props.scale === 'f' ?'#110E3C' :'#E7E7EB' };
+
     }
   }
 

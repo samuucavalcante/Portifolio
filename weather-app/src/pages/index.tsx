@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import Time from "../components/pages/Time";
-import TimeInfo from "../components/pages/TimeInfo";
+import Time from "../components/main/Time";
+import TimeInfo from "../components/main/TimeInfo";
 import { useRouter } from "next/router";
 import api from "../service/api";
 import Spinner from "../components/Spinner";
@@ -16,6 +16,10 @@ export type ConsolidatedWeather = {
   weather_state_abbr: Images;
   min_temp: number;
   max_temp: number;
+  wind_speed: number;
+  humidity: number;
+  visibility: number; 
+  air_pressure: number;
 };
 
 export type WeatherData = {
@@ -52,8 +56,9 @@ export default function Home() {
     <div className="container">
       {weather ? (
         <>
-          <Time data={weather} className="time" />
-          <TimeInfo data={weather} className="time-info" />
+        {console.log(router.query.scale)}
+          <Time scale={router.query.scale} data={weather} className="time" />
+          <TimeInfo scale={router.query.scale} data={weather} className="time-info" />
         </>
       ) : (
         <>

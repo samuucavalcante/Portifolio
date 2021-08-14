@@ -3,25 +3,29 @@ import { HtmlHTMLAttributes, useState, useEffect } from "react";
 import { Container } from "./styles";
 import { BiTargetLock } from "react-icons/bi";
 import { TiLocation } from "react-icons/ti";
-import Drawer from "../Drawer";
-import image from "../../utils/images";
+import Drawer from "../../Drawer";
+import image from "../../../utils/images";
 import Image from "next/image";
-import { WeatherData } from "../../pages";
-import formatDateToday from "../../utils/formatDateToday";
-import shower from '../../../public/Shower.png';
-import handleImage from "../../utils/images";
+import { WeatherData } from "../../../pages";
+import { formatDateToday } from "../../../utils/formatDate";
+import shower from "../../../public/Shower.png";
+import handleImage from "../../../utils/images";
+import { useRouter } from "next/router";
+import convertToFahrenheit from "../../../utils/convertToFahrenheit";
 
 interface Props extends HtmlHTMLAttributes<HTMLDivElement> {
   data: WeatherData;
+  scale: string[] | string | undefined;
 }
 
-export default function Time({ data, ...rest }: Props) {
+export default function Time({ scale, data, ...rest }: Props) {
   const [drawer, setDrawer] = useState<boolean>(false);
 
-  const { src, height, width } = handleImage(data.consolidated_weather[0].weather_state_abbr)
+  const { src } = handleImage(data.consolidated_weather[0].weather_state_abbr);
+  const router = useRouter();
 
   return (
-    <Container {...rest}>
+    <Container scale={scale} {...rest}>
       {drawer && <Drawer setDrawer={setDrawer} />}
       <div className="time">
         <div className="time-header">
@@ -41,7 +45,15 @@ export default function Time({ data, ...rest }: Props) {
             <Image src={src} alt="Shower" width={160} height={150} />
           </div>
           <h1 className="time-body-temperature">
-            {data?.consolidated_weather[0].the_temp.toFixed(0)}
+            {router.query.scale === "f" ? (
+              <>
+                {convertToFahrenheit(
+                  data?.consolidated_weather[0].the_temp.toFixed(0)
+                )}
+              </>
+            ) : (
+              <>{data?.consolidated_weather[0].the_temp.toFixed(0)}</>
+            )}
           </h1>
           <article className="time-body-weather-forecast">
             {data?.consolidated_weather[0].weather_state_name}

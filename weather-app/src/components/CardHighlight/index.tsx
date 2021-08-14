@@ -18,7 +18,7 @@ export default function CardHighlight({ title, type, value, progressBar = false 
       <h2 className="cardhighlight-body">
         {value}<span className="cardhighlight-text-type">{type}</span>
       </h2>
-      {progressBar && <ProgressBar bgcolor="#FFEC65" completed={84} />}
+      {progressBar && <ProgressBar bgcolor="#FFEC65" completed={value} />}
     </Container>
   );
 }

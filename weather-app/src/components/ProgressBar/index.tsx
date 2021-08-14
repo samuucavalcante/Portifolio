@@ -2,7 +2,7 @@ import { CSSProperties } from "react";
 
 interface PropsProgressBar {
   bgcolor: string;
-  completed: number;
+  completed: number | string;
 }
 
 export default function ProgressBar({ bgcolor, completed }: PropsProgressBar) {

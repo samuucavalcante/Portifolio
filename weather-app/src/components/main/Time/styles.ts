@@ -1,6 +1,11 @@
+import { useRouter } from 'next/router';
 import styled from "styled-components";
 
-export const Container = styled.div`
+type ContainerProps = {
+  scale: string | string[] |  undefined;
+}
+
+export const Container = styled.div<ContainerProps>`
   .time {
     background-image: url('./Cloud-background.png');
     background-repeat: no-repeat;
@@ -62,7 +67,7 @@ export const Container = styled.div`
       font-size: 120px;
 
       &::after {
-        content: "ºC";
+        content: "º${props => props.scale || 'C'}";
         display: inline-block;
         font-size: 38px;
         color: #a09fb1;

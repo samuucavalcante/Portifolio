@@ -17,8 +17,6 @@ const ldio = keyframes`
   opacity: 0;
 }
 `
-
-
 export const Container = styled.div`
    width: 200px;
     height: 200px;
@@ -32,7 +30,6 @@ export const Container = styled.div`
     transform: translateZ(0) scale(1);
     backface-visibility: hidden;
     transform-origin: 0 0;
-    /* see note above */
   }
 
   .ldio-u69yhgmewbr div {
@@ -57,7 +54,5 @@ export const Container = styled.div`
     border-radius: 50%;
     animation: ${ldio} 1.639344262295082s cubic-bezier(0, 0.2, 0.8, 1) infinite;
   }
-
- 
 `;
 
