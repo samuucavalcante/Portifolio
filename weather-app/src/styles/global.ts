@@ -40,6 +40,22 @@ export default createGlobalStyle`
     list-style: none;
   }
 
+  .wrap {
+    height: 100vh;
+    width: 100vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    background-color: #1e213a;
+
+    &-title {
+      font-size: 32px;
+    }
+  }
+
   .container {
     display: flex;
     height: 100vh;

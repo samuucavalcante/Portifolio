@@ -5,8 +5,7 @@ interface PropsProgressBar {
   completed: number;
 }
 
-export default function ProgressBar(props: PropsProgressBar) {
-  const { bgcolor, completed } = props;
+export default function ProgressBar({ bgcolor, completed }: PropsProgressBar) {
 
   const containerStyles: CSSProperties = {
     height: 10,

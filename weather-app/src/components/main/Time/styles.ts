@@ -51,6 +51,9 @@ export const Container = styled.div`
   }
 
   .time-body {
+    &-bg-time {
+    }
+
     &-temperature {
       margin: 48px 0;
       font-family: "Raleway";

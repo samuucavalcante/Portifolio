@@ -7,6 +7,7 @@ import CardHighlight from "../CardHighlight";
 interface Props extends HtmlHTMLAttributes<HTMLDivElement> {}
 
 export default function TimeInfo({ ...rest }: Props) {
+  
   return (
     <Container {...rest}>
       <div className="timeinfo-header">
