@@ -23,10 +23,10 @@ export default function TimeInfo({ scale, data, ...rest }: Props) {
     <Container scale={scale}  {...rest}>
       <div className="timeinfo-header">
         <div className="timeinfo-header-celsius">
-          <span onClick={() => push(query.query ? `?query=${query.query}&scale=c`:`?scale=C` )} className="timeinfo-header-celsius-text">ºC</span>
+          <span onClick={() => push(query.query ? `?query=${query.query}&scale=c`:`?scale=c` )} className="timeinfo-header-celsius-text">ºC</span>
         </div>
         <div className="timeinfo-header-fahrenheit">
-          <span onClick={() => push(query.query ? `?query=${query.query}&scale=f`:`?scale=F` )} className="timeinfo-header-fahrenheit-text">ºF</span>
+          <span onClick={() => push(query.query ? `?query=${query.query}&scale=f`:`?scale=c` )} className="timeinfo-header-fahrenheit-text">ºF</span>
         </div>
       </div>
       <div className="timeinfo-weather-forecast-weekly">
