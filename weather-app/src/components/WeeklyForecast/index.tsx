@@ -18,7 +18,8 @@ export default function WeeklyForecast({ data, index }:WeeklyForecastProps) {
   const { scale } = router.query;
 
   return (
-    <Container>
+    <Container scale={scale}>
+      {console.log(scale)}
       <h3 className="weeklyforecast-title">{index === 1 ? 'Tomorrow' :formatDateAdd(index)}</h3>
       <Image
         className="weeklyforecast-image"

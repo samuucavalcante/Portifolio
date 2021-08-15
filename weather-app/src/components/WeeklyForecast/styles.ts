@@ -1,7 +1,11 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
-  background-color: #1E213A;
+type ContainerP = {
+  scale: string[] | string | undefined;
+};
+
+export const Container = styled.div<ContainerP>`
+  background-color: #1e213a;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,11 +19,10 @@ export const Container = styled.div`
   text-align: center;
 
   .weeklyforecast {
-
     &-title {
       font-size: 16px;
       font-weight: 500;
-      color: #E7E7EB;
+      color: #e7e7eb;
     }
 
     &-info {
@@ -32,24 +35,20 @@ export const Container = styled.div`
     }
 
     &-info-max {
-      color: #E7E7EB;
+      color: #e7e7eb;
       font-size: 16px;
       &::after {
-        content: 'ºc';
+        content: "º${props => props.scale || 'c'}";
         font-size: 14px;
-        
       }
     }
 
     &-info-min {
-      color: #A09FB1;
+      color: #a09fb1;
       &::after {
-        content: 'ºc';
+        content: "º${props => props.scale || 'c'}";
         font-size: 14px;
-        
       }
     }
   }
-
-  
 `;
